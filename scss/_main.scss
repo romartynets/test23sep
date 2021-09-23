@@ -1,0 +1,248 @@
+// Reset styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Global styles
+body {
+    font-family: $fontRoboto;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fontPalatinoLinotype;
+    font-weight: normal;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+textarea {
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+// Components
+.btn {
+    font-family: $fontRoboto;
+    text-transform: uppercase;
+    padding: 15px 70px;
+    color: $white;
+    background-color:$blue;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+        filter: hue-rotate(45deg);
+    }
+}
+
+// Header
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('../img/header_background_v1.jpg');
+    background-size: cover;
+
+    .top-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        .logo img {
+            max-width: 231px;
+        }
+
+        nav {
+            display: flex;
+            text-transform: uppercase;
+
+            a {
+                display: block;
+                color: $white;
+                padding: 20px 117px;
+                transition: 0.3s all;
+
+                &:hover {
+                    background-color: $darkgrey;
+                }
+
+                &:not(:last-of-type) {
+                    border-right: 2px solid $darkgrey;
+                }
+            }
+        }
+    }
+
+    section {
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            font-family: $fontRoboto;
+            color: $white;
+            margin-bottom: 15px;
+
+        }
+    }
+}
+
+main {
+    margin: 20px auto;
+    padding: 0 15px;
+    max-width: 1170px;
+    width: 100%;
+
+
+    h1 {
+        text-align: right;
+        text-transform: uppercase;
+    }
+
+    .toolbar {
+        text-align: right;
+        margin:0 10px 10px 0;
+
+        & input{
+            padding:10px 20px;
+            color: $black;
+        }
+    }
+
+    .post-list {
+        margin-bottom: 50px;
+
+        article {
+            display: flex;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: $grey;
+
+            & img {
+                max-width: 280px;
+            }
+
+            & > div {
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn {
+                margin-top: 12px;
+                margin-left: auto;
+            }
+
+            .post {
+                .post-description {
+                    color: $red;
+                    padding-bottom: 5px;
+
+                    &::after{
+                        content:'';
+                        display: block;
+                        width: 100%;
+                        height: 1px;
+                        background-color: $darkgrey;
+                        margin-top: 10px;
+                    }
+                }
+
+                h3 {
+                    color: $blue;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .about {
+        margin-bottom: 60px;
+
+        p {
+            margin-bottom: 27px;
+        }
+    }
+
+    .contact-form {
+        text-align: right;
+
+        h4{
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .form-wrapper {
+            & > div:first-child {
+                display: flex;
+                margin: 0 -10px 20px;
+            }
+
+            .fullName,
+            .email {
+                display: flex;
+                flex-direction: column;
+                padding: 0 10px;
+                width: 50%;
+
+                & > span {
+                    margin-bottom: 5px;
+                    color: $blue;
+                }
+
+                & > input {
+                    padding: 15px;
+                }
+            }
+
+            .question {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+
+                & > span {
+                    margin-bottom: 5px;
+                    color: $blue;
+                }
+
+                & > textarea {
+                    height: 80px;
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: 20px 15px;
+}
